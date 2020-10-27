@@ -15,13 +15,13 @@ import java.util.Map;
  * Function: 服务器节点缓存
  *
  * @author crossoverJie
- *         Date: 2018/8/19 01:31
+ * Date: 2018/8/19 01:31
  * @since JDK 1.8
  */
 @Component
 public class ServerCache {
 
-    private static Logger logger = LoggerFactory.getLogger(ServerCache.class) ;
+    private static Logger logger = LoggerFactory.getLogger(ServerCache.class);
 
     @Autowired
     private LoadingCache<String, String> cache;
@@ -33,7 +33,6 @@ public class ServerCache {
         cache.put(key, key);
     }
 
-
     /**
      * 更新所有缓存/先删除 再新增
      *
@@ -43,16 +42,15 @@ public class ServerCache {
         cache.invalidateAll();
         for (String currentChild : currentChildren) {
             // currentChildren=ip-127.0.0.1:11212:9082 or 127.0.0.1:11212:9082
-            String key ;
-            if (currentChild.split("-").length == 2){
+            String key;
+            if (currentChild.split("-").length == 2) {
                 key = currentChild.split("-")[1];
-            }else {
-                key = currentChild ;
+            } else {
+                key = currentChild;
             }
             addCache(key);
         }
     }
-
 
     /**
      * 获取所有的服务列表
@@ -80,8 +78,8 @@ public class ServerCache {
     /**
      * rebuild cache list
      */
-    public void rebuildCacheList(){
-        updateCache(getServerList()) ;
+    public void rebuildCacheList() {
+        updateCache(getServerList());
     }
 
 }

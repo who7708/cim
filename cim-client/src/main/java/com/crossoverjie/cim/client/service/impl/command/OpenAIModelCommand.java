@@ -18,9 +18,8 @@ import org.springframework.stereotype.Service;
 public class OpenAIModelCommand implements InnerCommand {
     private final static Logger LOGGER = LoggerFactory.getLogger(OpenAIModelCommand.class);
 
-
     @Autowired
-    private MsgHandle msgHandle ;
+    private MsgHandle msgHandle;
 
     @Override
     public void process(String msg) {

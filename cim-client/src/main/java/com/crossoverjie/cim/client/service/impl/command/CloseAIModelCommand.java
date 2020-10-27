@@ -19,12 +19,11 @@ import org.springframework.stereotype.Service;
 public class CloseAIModelCommand implements InnerCommand {
     private final static Logger LOGGER = LoggerFactory.getLogger(CloseAIModelCommand.class);
 
+    @Autowired
+    private MsgHandle msgHandle;
 
     @Autowired
-    private MsgHandle msgHandle ;
-
-    @Autowired
-    private EchoService echoService ;
+    private EchoService echoService;
 
     @Override
     public void process(String msg) {

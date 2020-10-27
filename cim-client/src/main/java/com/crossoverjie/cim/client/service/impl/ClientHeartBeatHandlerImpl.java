@@ -24,7 +24,6 @@ public class ClientHeartBeatHandlerImpl implements HeartBeatHandler {
     @Autowired
     private CIMClient cimClient;
 
-
     @Override
     public void process(ChannelHandlerContext ctx) throws Exception {
 
@@ -33,6 +32,5 @@ public class ClientHeartBeatHandlerImpl implements HeartBeatHandler {
         cimClient.reconnect();
 
     }
-
 
 }

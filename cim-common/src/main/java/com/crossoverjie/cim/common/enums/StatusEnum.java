@@ -13,7 +13,7 @@ public enum StatusEnum {
     SUCCESS("9000", "成功"),
     /** 成功 */
     FALLBACK("8000", "FALL_BACK"),
-    /** 参数校验失败**/
+    /** 参数校验失败 **/
     VALIDATION_FAIL("3000", "invalid argument"),
     /** 失败 */
     FAIL("4000", "Failure"),
@@ -33,10 +33,7 @@ public enum StatusEnum {
     /** 登录信息不匹配 */
     ACCOUNT_NOT_MATCH("9100", "The User information you have used is incorrect!"),
 
-
-
     ;
-
 
     /** 枚举值码 */
     private final String code;
@@ -46,7 +43,8 @@ public enum StatusEnum {
 
     /**
      * 构建一个 StatusEnum 。
-     * @param code 枚举值码。
+     *
+     * @param code    枚举值码。
      * @param message 枚举描述。
      */
     private StatusEnum(String code, String message) {
@@ -55,39 +53,8 @@ public enum StatusEnum {
     }
 
     /**
-     * 得到枚举值码。
-     * @return 枚举值码。
-     */
-    public String getCode() {
-        return code;
-    }
-
-    /**
-     * 得到枚举描述。
-     * @return 枚举描述。
-     */
-    public String getMessage() {
-        return message;
-    }
-
-    /**
-     * 得到枚举值码。
-     * @return 枚举值码。
-     */
-    public String code() {
-        return code;
-    }
-
-    /**
-     * 得到枚举描述。
-     * @return 枚举描述。
-     */
-    public String message() {
-        return message;
-    }
-
-    /**
      * 通过枚举值码查找枚举值。
+     *
      * @param code 查找枚举值的枚举值码。
      * @return 枚举值码对应的枚举值。
      * @throws IllegalArgumentException 如果 code 没有对应的 StatusEnum 。
@@ -125,5 +92,41 @@ public enum StatusEnum {
             list.add(status.code());
         }
         return list;
+    }
+
+    /**
+     * 得到枚举值码。
+     *
+     * @return 枚举值码。
+     */
+    public String getCode() {
+        return code;
+    }
+
+    /**
+     * 得到枚举描述。
+     *
+     * @return 枚举描述。
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    /**
+     * 得到枚举值码。
+     *
+     * @return 枚举值码。
+     */
+    public String code() {
+        return code;
+    }
+
+    /**
+     * 得到枚举描述。
+     *
+     * @return 枚举描述。
+     */
+    public String message() {
+        return message;
     }
 }

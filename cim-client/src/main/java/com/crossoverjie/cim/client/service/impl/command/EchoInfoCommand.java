@@ -19,12 +19,11 @@ import org.springframework.stereotype.Service;
 public class EchoInfoCommand implements InnerCommand {
     private final static Logger LOGGER = LoggerFactory.getLogger(EchoInfoCommand.class);
 
-
     @Autowired
     private ClientInfo clientInfo;
 
     @Autowired
-    private EchoService echoService ;
+    private EchoService echoService;
 
     @Override
     public void process(String msg) {

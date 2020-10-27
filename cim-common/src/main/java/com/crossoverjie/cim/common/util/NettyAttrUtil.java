@@ -8,13 +8,12 @@ import io.netty.util.AttributeKey;
  * Function:
  *
  * @author crossoverJie
- *         Date: 2019/1/9 00:57
+ * Date: 2019/1/9 00:57
  * @since JDK 1.8
  */
 public class NettyAttrUtil {
 
     private static final AttributeKey<String> ATTR_KEY_READER_TIME = AttributeKey.valueOf("readerTime");
-
 
     public static void updateReaderTime(Channel channel, Long time) {
         channel.attr(ATTR_KEY_READER_TIME).set(time.toString());
@@ -28,7 +27,6 @@ public class NettyAttrUtil {
         }
         return null;
     }
-
 
     private static String getAttribute(Channel channel, AttributeKey<String> key) {
         Attribute<String> attr = channel.attr(key);

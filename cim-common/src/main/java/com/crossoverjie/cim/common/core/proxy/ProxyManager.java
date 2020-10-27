@@ -32,9 +32,8 @@ public final class ProxyManager<T> {
     private OkHttpClient okHttpClient;
 
     /**
-     *
-     * @param clazz Proxied interface
-     * @param url server provider url
+     * @param clazz        Proxied interface
+     * @param url          server provider url
      * @param okHttpClient http client
      */
     public ProxyManager(Class<T> clazz, String url, OkHttpClient okHttpClient) {
@@ -45,25 +44,25 @@ public final class ProxyManager<T> {
 
     /**
      * Get proxy instance of api.
+     *
      * @return
      */
     public T getInstance() {
         return (T) Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(), new Class[]{clazz}, new ProxyInvocation());
     }
 
-
     private class ProxyInvocation implements InvocationHandler {
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
             JSONObject jsonObject = new JSONObject();
-            String serverUrl = url + "/" + method.getName() ;
+            String serverUrl = url + "/" + method.getName();
 
             if (args != null && args.length > 1) {
                 throw new CIMException(VALIDATION_FAIL);
             }
 
-            if (method.getParameterTypes().length > 0){
+            if (method.getParameterTypes().length > 0) {
                 Object para = args[0];
                 Class<?> parameterType = method.getParameterTypes()[0];
                 for (Field field : parameterType.getDeclaredFields()) {

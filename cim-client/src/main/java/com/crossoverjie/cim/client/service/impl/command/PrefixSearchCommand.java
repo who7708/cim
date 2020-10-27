@@ -23,11 +23,10 @@ import java.util.List;
 public class PrefixSearchCommand implements InnerCommand {
     private final static Logger LOGGER = LoggerFactory.getLogger(PrefixSearchCommand.class);
 
-
     @Autowired
-    private RouteRequest routeRequest ;
+    private RouteRequest routeRequest;
     @Autowired
-    private EchoService echoService ;
+    private EchoService echoService;
 
     @Override
     public void process(String msg) {
@@ -44,7 +43,7 @@ public class PrefixSearchCommand implements InnerCommand {
 
             for (String res : list) {
                 res = res.replace(key, "\033[31;4m" + key + "\033[0m");
-                echoService.echo(res) ;
+                echoService.echo(res);
             }
 
         } catch (Exception e) {

@@ -27,12 +27,12 @@ public interface RouteApi {
 
     /**
      * Point to point chat
+     *
      * @param p2pRequest
      * @return
      * @throws Exception
      */
     Object p2pRoute(P2PReqVO p2pRequest) throws Exception;
-
 
     /**
      * Offline account
@@ -45,6 +45,7 @@ public interface RouteApi {
 
     /**
      * Login account
+     *
      * @param loginReqVO
      * @return
      * @throws Exception

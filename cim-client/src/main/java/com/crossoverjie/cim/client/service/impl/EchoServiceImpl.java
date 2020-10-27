@@ -34,7 +34,6 @@ public class EchoServiceImpl implements EchoService {
         System.out.println(log);
     }
 
-
     /**
      * print msg
      *

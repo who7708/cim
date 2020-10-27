@@ -26,7 +26,7 @@ import java.net.InetSocketAddress;
  * Function:
  *
  * @author crossoverJie
- *         Date: 21/05/2018 00:30
+ * Date: 21/05/2018 00:30
  * @since JDK 1.8
  */
 @Component
@@ -37,10 +37,8 @@ public class CIMServer {
     private EventLoopGroup boss = new NioEventLoopGroup();
     private EventLoopGroup work = new NioEventLoopGroup();
 
-
     @Value("${cim.server.port}")
     private int nettyPort;
-
 
     /**
      * 启动 cim server
@@ -65,7 +63,6 @@ public class CIMServer {
         }
     }
 
-
     /**
      * 销毁
      */
@@ -76,12 +73,12 @@ public class CIMServer {
         LOGGER.info("Close cim server success!!!");
     }
 
-
     /**
      * Push msg to client.
+     *
      * @param sendMsgReqVO 消息
      */
-    public void sendMsg(SendMsgReqVO sendMsgReqVO){
+    public void sendMsg(SendMsgReqVO sendMsgReqVO) {
         NioSocketChannel socketChannel = SessionSocketHolder.get(sendMsgReqVO.getUserId());
 
         if (null == socketChannel) {

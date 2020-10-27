@@ -6,7 +6,6 @@ import java.util.Map;
 
 public class SystemCommandEnumTypeTest {
 
-
     @Test
     public void getAllStatusCode() throws Exception {
         Map<String, String> allStatusCode = SystemCommandEnum.getAllStatusCode();

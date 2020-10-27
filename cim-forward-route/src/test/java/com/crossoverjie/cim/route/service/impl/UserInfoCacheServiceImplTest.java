@@ -20,7 +20,6 @@ public class UserInfoCacheServiceImplTest {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(UserInfoCacheServiceImplTest.class);
 
-
     @Autowired
     private UserInfoCacheService userInfoCacheService;
 
@@ -36,7 +35,7 @@ public class UserInfoCacheServiceImplTest {
     }
 
     @Test
-    public void onlineUser(){
+    public void onlineUser() {
         Set<CIMUserInfo> cimUserInfos = userInfoCacheService.onlineUser();
         LOGGER.info("cimUserInfos={}", JSON.toJSONString(cimUserInfos));
     }

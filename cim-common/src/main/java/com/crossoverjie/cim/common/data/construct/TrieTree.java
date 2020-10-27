@@ -9,7 +9,7 @@ import java.util.List;
  * Function:字典树字符前缀模糊匹配
  *
  * @author crossoverJie
- *         Date: 2019/1/7 18:58
+ * Date: 2019/1/7 18:58
  * @since JDK 1.8
  */
 public class TrieTree {
@@ -58,7 +58,6 @@ public class TrieTree {
                 index = aChar - LOWERCASE_STAR;
             }
 
-
             if (index >= 0 && index < CHILDREN_LENGTH) {
                 if (root.children[index] == null) {
                     Node node = new Node();
@@ -78,7 +77,6 @@ public class TrieTree {
 
         }
     }
-
 
     /**
      * 递归深度遍历
@@ -147,7 +145,6 @@ public class TrieTree {
         return value;
     }
 
-
     /**
      * 查询所有
      *
@@ -158,7 +155,6 @@ public class TrieTree {
         List<String> value = depth(this.root, new ArrayList<String>(), chars, 0);
         return value;
     }
-
 
     public List<String> depth(Node node, List<String> list, char[] chars, int index) {
         if (node.children == null || node.children.length == 0) {
@@ -198,10 +194,8 @@ public class TrieTree {
             }
         }
 
-
         return list;
     }
-
 
     /**
      * 字典树节点

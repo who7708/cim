@@ -105,7 +105,6 @@ public class AccountServiceRedisImpl implements AccountService {
 
         Map<Long, CIMServerResVO> routes = new HashMap<>(64);
 
-
         RedisConnection connection = redisTemplate.getConnectionFactory().getConnection();
         ScanOptions options = ScanOptions.scanOptions()
                 .match(ROUTE_PREFIX + "*")
@@ -146,7 +145,6 @@ public class AccountServiceRedisImpl implements AccountService {
         CIMServerResVO cimServerResVO = new CIMServerResVO(RouteInfoParseUtil.parse(value));
         routes.put(userId, cimServerResVO);
     }
-
 
     @Override
     public void pushMsg(CIMServerResVO cimServerResVO, long sendUserId, ChatReqVO groupReqVO) throws Exception {

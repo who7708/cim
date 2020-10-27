@@ -24,14 +24,11 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public final class RingBufferWheel {
 
-    private Logger logger = LoggerFactory.getLogger(RingBufferWheel.class);
-
-
     /**
      * default ring buffer size
      */
     private static final int STATIC_RING_SIZE = 64;
-
+    private Logger logger = LoggerFactory.getLogger(RingBufferWheel.class);
     private Object[] ringBuffer;
 
     private int bufferSize;
@@ -74,7 +71,6 @@ public final class RingBufferWheel {
         this.bufferSize = STATIC_RING_SIZE;
         this.ringBuffer = new Object[bufferSize];
     }
-
 
     /**
      * Create a new delay task ring buffer by custom buffer size
@@ -131,9 +127,9 @@ public final class RingBufferWheel {
         return id;
     }
 
-
     /**
      * Cancel task by taskId
+     *
      * @param id unique id through {@link #addTask(Task)}
      * @return
      */
@@ -180,9 +176,10 @@ public final class RingBufferWheel {
 
     /**
      * Same with method {@link #taskSize}
+     *
      * @return
      */
-    public int taskMapSize(){
+    public int taskMapSize() {
         return taskMap.size();
     }
 
@@ -230,9 +227,7 @@ public final class RingBufferWheel {
             executorService.shutdown();
         }
 
-
     }
-
 
     private Set<Task> get(int index) {
         return (Set<Task>) ringBuffer[index];
@@ -245,6 +240,7 @@ public final class RingBufferWheel {
 
     /**
      * Remove and get task list.
+     *
      * @param key
      * @return task list
      */
@@ -326,7 +322,7 @@ public final class RingBufferWheel {
         /**
          * The unique ID of the task
          */
-        private int taskId ;
+        private int taskId;
 
         @Override
         public void run() {
@@ -337,7 +333,6 @@ public final class RingBufferWheel {
         }
 
         /**
-         *
          * @param key Delay time(seconds)
          */
         public void setKey(int key) {
@@ -368,7 +363,6 @@ public final class RingBufferWheel {
             this.taskId = taskId;
         }
     }
-
 
     private class TriggerJob implements Runnable {
 

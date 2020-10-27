@@ -16,6 +16,4 @@ public class CommonTest {
         System.out.println(reachable);
     }
 
-
-
 }

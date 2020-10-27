@@ -6,11 +6,10 @@ import java.util.List;
  * Function:
  *
  * @author crossoverJie
- *         Date: 2018/12/26 23:17
+ * Date: 2018/12/26 23:17
  * @since JDK 1.8
  */
 public class OnlineUsersResVO {
-
 
     /**
      * code : 9000

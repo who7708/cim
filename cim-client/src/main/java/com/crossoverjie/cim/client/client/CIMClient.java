@@ -54,7 +54,7 @@ public class CIMClient {
     private SocketChannel channel;
 
     @Autowired
-    private EchoService echoService ;
+    private EchoService echoService;
 
     @Autowired
     private RouteRequest routeRequest;
@@ -69,7 +69,7 @@ public class CIMClient {
     private ClientInfo clientInfo;
 
     @Autowired
-    private ReConnectManager reConnectManager ;
+    private ReConnectManager reConnectManager;
 
     /**
      * 重试次数
@@ -87,7 +87,6 @@ public class CIMClient {
 
         //向服务端注册
         loginCIMServer();
-
 
     }
 
@@ -163,8 +162,8 @@ public class CIMClient {
                 .build();
         ChannelFuture future = channel.writeAndFlush(login);
         future.addListener((ChannelFutureListener) channelFuture ->
-                        echoService.echo("Registry cim server success!")
-                );
+                echoService.echo("Registry cim server success!")
+        );
     }
 
     /**
@@ -194,19 +193,18 @@ public class CIMClient {
                 .setType(Constants.CommandType.MSG)
                 .build();
 
-
         ChannelFuture future = channel.writeAndFlush(protocol);
         future.addListener((ChannelFutureListener) channelFuture ->
                 LOGGER.info("客户端手动发送 Google Protocol 成功={}", googleProtocolVO.toString()));
 
     }
 
-
     /**
      * 1. clear route information.
      * 2. reconnect.
      * 3. shutdown reconnect job.
      * 4. reset reconnect state.
+     *
      * @throws Exception
      */
     public void reconnect() throws Exception {
@@ -229,7 +227,7 @@ public class CIMClient {
      * @throws InterruptedException
      */
     public void close() throws InterruptedException {
-        if (channel != null){
+        if (channel != null) {
             channel.close();
         }
     }

@@ -51,7 +51,6 @@ public class BeanConfig {
                 });
     }
 
-
     /**
      * Redis bean
      *
@@ -66,7 +65,6 @@ public class BeanConfig {
         redisTemplate.afterPropertiesSet();
         return redisTemplate;
     }
-
 
     /**
      * http client
@@ -93,8 +91,8 @@ public class BeanConfig {
             Method method = Class.forName(routeWay).getMethod("setHash", AbstractConsistentHash.class);
             AbstractConsistentHash consistentHash = (AbstractConsistentHash)
                     Class.forName(appConfiguration.getConsistentHashWay()).newInstance();
-            method.invoke(routeHandle,consistentHash) ;
-            return routeHandle ;
+            method.invoke(routeHandle, consistentHash);
+            return routeHandle;
         } else {
 
             return routeHandle;

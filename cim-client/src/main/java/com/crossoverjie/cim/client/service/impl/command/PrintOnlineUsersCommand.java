@@ -22,12 +22,11 @@ import java.util.List;
 public class PrintOnlineUsersCommand implements InnerCommand {
     private final static Logger LOGGER = LoggerFactory.getLogger(PrintOnlineUsersCommand.class);
 
+    @Autowired
+    private RouteRequest routeRequest;
 
     @Autowired
-    private RouteRequest routeRequest ;
-
-    @Autowired
-    private EchoService echoService ;
+    private EchoService echoService;
 
     @Override
     public void process(String msg) {
@@ -36,7 +35,7 @@ public class PrintOnlineUsersCommand implements InnerCommand {
 
             echoService.echo("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             for (OnlineUsersResVO.DataBodyBean onlineUser : onlineUsers) {
-                echoService.echo("userId={}=====userName={}",onlineUser.getUserId(),onlineUser.getUserName());
+                echoService.echo("userId={}=====userName={}", onlineUser.getUserId(), onlineUser.getUserName());
             }
             echoService.echo("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 

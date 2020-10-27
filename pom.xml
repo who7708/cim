@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.crossoverjie.netty</groupId>
     <artifactId>cim</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>${cim.release.version}</version>
     <packaging>pom</packaging>
 
     <name>cim</name>
@@ -16,6 +16,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <swagger.version>2.5.0</swagger.version>
+
+        <cim.release.version>v1.0.6</cim.release.version>
     </properties>
 
     <parent>
@@ -51,19 +53,19 @@
             <dependency>
                 <groupId>com.crossoverjie.netty</groupId>
                 <artifactId>cim-common</artifactId>
-                <version>1.0.1-SNAPSHOT</version>
+                <version>${cim.release.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.crossoverjie.netty</groupId>
                 <artifactId>cim-rout-api</artifactId>
-                <version>1.0.1-SNAPSHOT</version>
+                <version>${cim.release.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.crossoverjie.netty</groupId>
                 <artifactId>cim-server-api</artifactId>
-                <version>1.0.1-SNAPSHOT</version>
+                <version>${cim.release.version}</version>
             </dependency>
 
             <dependency>

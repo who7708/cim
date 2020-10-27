@@ -5,10 +5,9 @@
     <parent>
         <artifactId>cim</artifactId>
         <groupId>com.crossoverjie.netty</groupId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>${cim.release.version}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <version>1.0.1-SNAPSHOT</version>
 
     <artifactId>cim-common</artifactId>
 

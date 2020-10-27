@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.crossoverjie.netty</groupId>
         <artifactId>cim</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>${cim.release.version}</version>
     </parent>
     <artifactId>cim-server</artifactId>
     <packaging>jar</packaging>
